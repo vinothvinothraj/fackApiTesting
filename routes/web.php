@@ -1,9 +1,11 @@
 <?php
 
-use App\Http\Livewire\LandingPage\GetSpecificPost;
 use App\Http\Livewire\User\UserIndex;
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\User\UserCreate;
+use App\Http\Livewire\User\UserUpdate;
 use App\Http\Livewire\LandingPage\Home;
+use App\Http\Livewire\LandingPage\GetSpecificPost;
 
 Route::get('/', Home::class)->name('home');
 Route::get('/post', GetSpecificPost::class)->name('post');
@@ -19,5 +21,5 @@ Route::middleware([
 });
 
 Route::get('/users', UserIndex::class)->name('users');
-// Route::get('/users/create', UserCreate::class)->name('users.create');
-// Route::get('/users/{user}/edit', UserUpdate::class)->name('users.edit');
+Route::get('/users/create', UserCreate::class)->name('users.create');
+Route::get('/users/{user}/edit', UserUpdate::class)->name('users.edit');
