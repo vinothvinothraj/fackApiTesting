@@ -1,11 +1,12 @@
 <?php
 
+use App\Http\Livewire\LandingPage\GetSpecificPost;
 use App\Http\Livewire\User\UserIndex;
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\LandingPage\Home;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', Home::class)->name('home');
+Route::get('/post', GetSpecificPost::class)->name('post');
 
 Route::middleware([
     'auth:sanctum',
